@@ -15,8 +15,7 @@ jobs:
 
       - name: Update content
         run: |
-          git config -f .gitmodules submodule.cms-content.branch release
-          git submodule update --remote cms-content
+          git submodule update --remote --init cms-content
           git add .
           git commit -m "Release at `date +'%Y-%m-%d %H:%M:%S'`" || echo "No changes to commit"
           git push origin HEAD
