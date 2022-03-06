@@ -1,3 +1,4 @@
 [submodule "cms-content"]
 	path = cms-content
 	url = https://github.com/youshaneh/cms-content.git
+	branch = release

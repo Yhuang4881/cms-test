@@ -1,0 +1,11 @@
+name: Submodules Sync
+on:
+  - workflow_dispatch
+jobs:
+  sync:
+    name: Submodules Sync
+    runs-on: ubuntu-latest
+    steps:
+    - name: test
+      run: |
+        echo "test"
