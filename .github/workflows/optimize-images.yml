@@ -6,6 +6,16 @@ jobs:
     name: Submodules Sync
     runs-on: ubuntu-latest
     steps:
-    - name: test
-      run: |
-        echo "test"
+      - uses: actions/checkout@v3
+      
+      - name: Set Git config
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "Github Actions"
+
+      - name: Update content
+        run: |
+          git pull https://github.com/youshaneh/cms-content.git          
+          git add .
+          git commit -m "Release at `date +'%Y-%m-%d %H:%M:%S'`" || echo "No changes to commit"
+          git push origin HEAD
