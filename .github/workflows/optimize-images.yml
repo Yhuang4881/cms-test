@@ -16,7 +16,7 @@ jobs:
       - name: Update content
         run: |
           git config pull.rebase false
-          git pull https://github.com/youshaneh/cms-content.git          
+          git pull --allow-unrelated-histories https://github.com/youshaneh/cms-content.git          
           git add .
           git commit -m "Release at `date +'%Y-%m-%d %H:%M:%S'`" || echo "No changes to commit"
           git push origin HEAD
