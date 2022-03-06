@@ -15,8 +15,8 @@ jobs:
 
       - name: Update content
         run: |
-          git config pull.rebase false
-          git pull --strategy-option theirs --allow-unrelated-histories https://github.com/youshaneh/cms-content.git          
+          git config -f .gitmodules submodule.cms-content.branch release
+          git submodule update --remote cms-content
           git add .
           git commit -m "Release at `date +'%Y-%m-%d %H:%M:%S'`" || echo "No changes to commit"
           git push origin HEAD
